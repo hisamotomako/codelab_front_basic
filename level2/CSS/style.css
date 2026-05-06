@@ -5,12 +5,12 @@
 }
 .container{
   display: flex;
-  margin: 0;
+  margin: 0 auto;
   width: 100%;
   max-width: 1200px;
 }
 header{
-  background-color: rgb(34, 96, 147);
+  background-color:  rgb(34, 96, 147);;
   flex: 0 0 30%;
   color: aliceblue;
   text-align: center;
@@ -46,11 +46,15 @@ header a:active{
   color: yellow;
 }
 main{
-  margin: 50px;
+  flex: 1;
+  min-width: 0;
 }
 .hero{
   width: 100%;
   margin: 0;
+}
+.inner{
+  margin-left: 50px;
 }
 .welcome{
   margin-top: 50px ;
@@ -102,22 +106,26 @@ p{
   font-size: 16px;
   font-weight: 300;
   margin: 20px 0 auto;
-  width: 150px;
+  width: 140px;
   padding: 15px 20px;
+}
+.gallery{
+  margin-top: 50px;
+  padding-left: 50px;
 }
 .gallery-row{
   display: flex;
-  gap: 10px;
-  margin-top: 20px;
-  margin-bottom: 100px;
+  gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 .gallery-row li{
   list-style-type: none;
 }
 .gallery-row img{
-  flex: 1;
-  width: 120px;
+  width: 100%;
   height: auto;
+  display: block;
 }
 .contact{
   display: flex;
@@ -143,7 +151,7 @@ form label{
   margin-bottom: 10px;
   padding: 5px 10px;
   gap: 5px;
-  width: 340px;
+  width: 300px;
 }
 form input,form textarea{
   border: none;
@@ -151,7 +159,7 @@ form input,form textarea{
   padding: 5px;
 }
 form textarea{
-  height: 200px;
+  height: 150px;
   resize: none;
 }
 .form-text{
