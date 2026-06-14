@@ -57,6 +57,12 @@ main{
 section,footer{
   margin-top: 50px;
 }
+.inner{
+  margin-left: 50px;
+}
+.welcome{
+  margin-top: 50px ;
+}
 .welcome p{
   margin: 30px auto;
 }
@@ -72,6 +78,7 @@ p{
 }
 .about{
   display: flex;
+  margin-top: 50px;
   padding: 0;
 }
 .about h2,.gallery h2,.contact h2{
@@ -105,6 +112,10 @@ p{
   margin: 20px 0 auto;
   width: 140px;
   padding: 15px 20px;
+}
+.gallery{
+  margin-top: 50px;
+  padding-left: 50px;
 }
 .gallery-row{
   display: flex;
@@ -167,6 +178,7 @@ form textarea{
 }
 footer{
   font-size: 14px;
+  margin-top: 50px;
   margin-bottom: 30px;
 }
 footer a{
