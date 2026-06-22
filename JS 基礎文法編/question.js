@@ -11,8 +11,8 @@
 // 解答を以下に記述してください。
 
 alert(200);
-alert("Hello, World!")
-alert(`It/'s surprising that she said, I can/'t believe it/'s already over.`)
+alert("Hello, World!");
+alert('It\'s surprising that she said, I can\'t believe it\'s already over.');
 
 // 問2: console.log() を使って値を表示しよう
 // 次の値を console.log() で表示してください。
@@ -63,7 +63,7 @@ console.log(20 % 6);
 
 let bookCount = Number(prompt('欲しい書籍の数を入力してください。'));
 const bookPrice = 1800;
-console.log　(`合計金額 : ${bookCount　*　bookPrice} 円`);
+console.log (`合計金額 : ${bookCount * bookPrice} 円`);
 
 
 // B. 商品の価格と税率を使って税込み金額を計算しよう
@@ -148,11 +148,11 @@ if (age <= 12){
 // 解答を以下に記述してください。
 const price = Number(prompt("購入金額を入力してください"));
 if (price >=10000) {
-  console.log(`最終価格: '${price * 0.8}'円(20%割引適用)`);
+  console.log(`最終価格: ${price * 0.8}円(20%割引適用)`);
 } else if (price >=5000){
-  console.log(`最終価格: '${price * 0.9}'円（10% 割引適用）`);
+  console.log(`最終価格: ${price * 0.9}円（10% 割引適用）`);
 } else if (price <=4999 ){
-  console.log(`最終価格: '${price}'円`);
+  console.log(`最終価格: ${price}円`);
 }
 
 // 問6: Switchを使って判定しよう
