@@ -74,7 +74,7 @@ console.log (`合計金額 : ${bookCount * bookPrice} 円`);
 // Bの解答を以下に記述してください。
 
 const goodsPrice=Number(prompt('商品の価格を入力してください。'));
-let goodsCount = Number(prompt('商品の数を入力してください。'));
+const goodsCount = Number(prompt('商品の数を入力してください。'));
 console.log(goodsCount * goodsPrice * 1.1);
 
 
@@ -151,7 +151,7 @@ if (price >=10000) {
   console.log(`最終価格: ${price * 0.8}円(20%割引適用)`);
 } else if (price >=5000){
   console.log(`最終価格: ${price * 0.9}円（10% 割引適用）`);
-} else if (price <=4999 ){
+} else {
   console.log(`最終価格: ${price}円`);
 }
 
@@ -210,8 +210,9 @@ switch (weekday) {
     break;
   case "金":
     console.log("Friday");
+    break;
   case "土":
-    console.log("Saturday")
+    console.log("Saturday");
     break;
   default:
     console.log("Unknown");
@@ -223,7 +224,7 @@ switch (weekday) {
 // ・2月: "◯月は28日が末日です。"
 
 // 解答を以下に記述してください。
-const month = prompt("月をご記入ください");
+const month = Number(prompt("月をご記入ください"));
 switch (month) {
   case "1":
   case "3":
@@ -367,7 +368,7 @@ do{
 }while (savingDo < targetSaving)
 const yearsDo = Math . floor(monthsDo / 12);
 const remainMonthsDo = monthsDo % 12 ;
-console.log (`${monthlySaving}円ずつ毎月貯めると、${yearsDo}年${remainMonthsDo}ヶ月で${targetSaving}円を超えます。`)
+console.log (`${monthlySaving}円ずつ毎月貯めると、${yearsDo}年${remainMonthsDo}ヶ月で${targetSaving}円を超えます。`);
 
 // 問9: ループを制御しよう
 // 以下を繰り返し処理で行い、console.log() で表示してください。
