@@ -29,7 +29,8 @@ function getBookPrice(bookCount){
   return totalPrice;
 }
 // テスト実行
-console.log(getBookPrice(10));
+let bookCount = Number(prompt('購入する書籍の冊数を入力してください。'));
+console.log(getBookPrice(bookCount));
 
 // B. 商品の価格と税率を使って税込み金額を計算しよう
 // ・商品の価格をユーザに聞く
@@ -50,7 +51,9 @@ function getTaxPrice(productPrice,productCount){
   return totalPrice;
 }
 // テスト実行
-console.log(getTaxPrice(2500,6));
+let productPrice = Number(prompt('商品の価格を入力してください（円）:'));
+let productCount = Number(prompt('購入する個数を入力してください:'));
+console.log(getTaxPrice(productPrice,productCount));
 
 // C. 旅行の予定を作成しよう
 // ・旅行先（大阪、京都等）をユーザに聞く
@@ -67,7 +70,10 @@ function showTrip(destination,travelDays){
   console.log(`あなたは ${destination} に ${travelDays} 日間の旅行に行きます！`)
 }
 // テスト実行
-showTrip("北海道",7);
+let destination = prompt('旅行先を入力してください（大阪、京都など）:');
+let travelDays = Number(prompt('旅行日数を入力してください:'));
+console.log(showTrip(destination,travelDays));
+console.log(showTrip("北海道",7));
 
 // 確認問題（基礎文法）の問5で解いたコードを関数にしましょう。
 // 例題. ユーザーに テストの点数 を入力してもらい、以下の成績を判定してください。
@@ -95,7 +101,10 @@ function getGrade(score = 70){
 }
 }
 // テスト実行
+const score = Number(prompt("Enter your score:"));
+console.log(getGrade(score));
 console.log(getGrade(90));
+console.log(getGrade(50));
 
 // A. ユーザーに 数値 を入力してもらい、偶数か奇数を判定してください。
 // ・偶数なら "偶数"
@@ -118,6 +127,8 @@ function judgeNumber(number){
 }
 }
 // 1～10までを判定
+const number = Number(prompt("数値を入力してください:"));
+console.log(judgeNumber(number));
 console.log(judgeNumber(1));
 console.log(judgeNumber(2));
 console.log(judgeNumber(3));
@@ -128,6 +139,7 @@ console.log(judgeNumber(7));
 console.log(judgeNumber(8));
 console.log(judgeNumber(9));
 console.log(judgeNumber(10));
+
 // B. ユーザーに年齢を入力してもらい、以下のルールで判定してください。
 // ・12歳以下: "子供"
 // ・13歳～19歳: "ティーン"
@@ -163,7 +175,11 @@ function judgeAge(age = 50){
 }
 }
 // テスト実行
+const age = Number(prompt("年齢を入力してください:"));
+console.log(judgeAge(age));
 console.log(judgeAge(30));
+console.log(judgeAge(10));
+console.log(judgeAge(-1));
 
 // C. ユーザーに 購入金額 を入力してもらい、以下のルールで割引を適用し、その割引率と最終価格を表示してください。
 // ・10000円以上: "最終価格: XXXX円（20% 割引適用）"
@@ -189,7 +205,7 @@ console.log(judgeAge(30));
 //}
 
 // 上記内容を関数化した内容を解答してください。
-function getTotalPrice(number){
+function getTotalPrice(number = 5000){
   let discountRate = 0; // 割引率
 
   if (number >= 10000) {
@@ -207,7 +223,11 @@ if (discountRate > 0) {
 }
 }
 // テスト実行
-console.log(getTotalPrice(5000))
+const price = Number(prompt("購入金額を入力してください（円）:"));
+console.log(getTotalPrice(price));
+console.log(getTotalPrice(5000));
+console.log(getTotalPrice(10000));
+console.log(getTotalPrice(2500));
 
 // 確認問題（基礎文法）の問6で解いたコードを無名関数を使って関数化しましょう。
 // 例題. ユーザーに red, yellow, blue, green のいずれかを入力してもらい、以下のメッセージを表示してください。
@@ -246,7 +266,11 @@ const judgeSignal = function(color){
   }
 };
 // テスト実行
+const color = prompt("信号機の色をいれてください:");
+console.log(judgeSignal(color));
 console.log(judgeSignal("blue"));
+console.log(judgeSignal("red"));
+console.log(judgeSignal("black"));
 
 // A. ユーザーに日本語の曜日を入力してもらい、英語の曜日を表示する処理を作成してください。
 // ・日: "Sunday"
@@ -285,6 +309,33 @@ console.log(judgeSignal("blue"));
 //    console.log("無効な曜日です");
 //}
 
+// 上記内容を無名関数化した内容を解答してください。
+const getDayOfWeek = function(day){
+  switch (day) {
+    case "日":
+      return("Sunday");
+    case "月":
+      return("Monday");
+    case "火":
+      return("Tuesday");
+    case "水":
+      return("Wednesday");
+    case "木":
+      return("Thursday");
+    case "金":
+      return("Friday");
+    case "土":
+      return("Saturday");
+    default:
+      return("無効な曜日です");
+  }
+};
+// テスト実行
+const day = prompt("日本語の曜日を入力してください（日, 月, 火, 水, 木, 金, 土）:");
+console.log(getDayOfWeek(day));
+console.log(getDayOfWeek("金"));
+console.log(getDayOfWeek("日"));
+console.log(getDayOfWeek("祝日"));
 
 // B. ユーザーに月の数字を入れてもらい、その月の末日を表示する処理を作成してください。
 // ・1、3、5、7、8、10、12: "◯月は31日が末日です。"
@@ -308,49 +359,24 @@ console.log(judgeSignal("blue"));
 //}
 
 // 上記内容を無名関数化した内容を解答してください。
-//A
-const getDayOfWeek = function(day){
-  switch (day) {
-    case "日":
-      return("Sunday");
-    case "月":
-      return("Monday");
-    case "火":
-      return("Tuesday");
-    case "水":
-      return("Wednesday");
-    case "木":
-      return("Thursday");
-    case "金":
-      return("Friday");
-    case "土":
-      return("Saturday");
-    default:
-      return("無効な曜日です");
-  }
-};
-
-//B
 const showDay = function(month){
   switch (month) {
   case 1: case 3: case 5: case 7: case 8: case 10: case 12:
     return(`${month}月は31日が末日です。`);
-    break;
   case 4: case 6: case 9: case 11:
     return(`${month}月は30日が末日です。`);
-    break;
   case 2:
     return(`${month}月は28日が末日です。`);
-    break;
   default:
     return("無効な月の入力です。1～12の数字を入力してください。");
 }
 };
 // テスト実行
-//A
-console.log(getDayOfWeek("金"));
-//B
+const month = Number(prompt("月の数字を入力してください（1～12）:"));
+console.log(showDay(month));
 console.log(showDay(7));
+console.log(showDay(12));
+console.log(showDay(15));
 
 // C. ユーザーに購入金額とくじの色を入れてもらい、くじの色によって、購入金額を割引する処理を作成してください。
 // くじの色が
@@ -413,7 +439,12 @@ if (discountRate > 0) {
 }
 }
 // テスト実行
+const lotteryPrice = Number(prompt("購入金額を入力してください（円）:"));
+const lotteryColor = prompt("くじの色を入力してください（金, 銀, 銅）:");
+console.log(getFinalPrice(lotteryPrice,lotteryColor));
 console.log(getFinalPrice(10000,"銀"));
+console.log(getFinalPrice(10000,"金"));
+console.log(getFinalPrice(10000,"白"));
 
 // 確認問題（基礎文法）の問7で解いたコードをアロー関数式を使って関数化しましょう。
 // 例題. 1からXまでの合計を計算し、最後に"合計:xxx"と表示してください。
@@ -471,16 +502,20 @@ console.log(getFinalPrice(10000,"銀"));
 
 // 上記内容をアロー関数式を使って関数化した内容を解答してください。
 const Pyramid = (height) =>{
+  let result = "";
   for (let i = 1; i <= height; i++) {
     let row = "";
     for (let j = 1; j <= i; j++) {
       row += "* ";
     }
-    console.log(row);
+    result += row + "\n";
   }
+
+  return result;
 };
 // テスト実行
-Pyramid(5);
+const height = Number(prompt("数値を入力してください"))
+console.log(Pyramid(height));
 
 // C. 1からXまでの数を表示し、
 // 3の倍数のとき "Fizz"
@@ -521,20 +556,27 @@ Pyramid(5);
 
 // 上記内容をアロー関数式を使って関数化した内容を解答してください。
 const fizzBuzz = (X) =>{
+  let result = "";
+
   for (let i = 1; i <= X; i++) {
     if (i % 3 === 0 && i % 5 ===0){
-      console.log("FizzBuzz");
+      result += "FizzBuzz\n"
     } else if (i % 3 === 0) {
-      console.log("Fizz");
+      result += "Fizz\n";
     } else if (i % 5 === 0) {
-      console.log("Buzz");
+      result += "Buzz\n";
     } else {
-      console.log(i);
+      result += i + "\n";
     }
   }
+  return result;
 };
 // テスト実行
-fizzBuzz(25);
+const X = Number(prompt("1からXまでの合計を計算します。Xの値を入力してください:"));
+console.log(fizzBuzz(X));
+console.log(fizzBuzz(25));
+console.log(fizzBuzz(30));
+console.log(fizzBuzz(15));
 
 // 確認問題（基礎文法）の問8で解いたコードをアロー関数式を使って関数化しましょう。
 // while版かdo-while版のどちらか一方でOK
@@ -587,10 +629,12 @@ const calculateSavings = (x,y) => {
   let years = Math.floor(months / 12);
   let remainingMonths = months % 12;
 
-  console.log(`${y}円ずつ毎月貯めると、${years}年${remainingMonths}ヶ月で${x}円を超えます。`);
+  return `${y}円ずつ毎月貯めると、${years}年${remainingMonths}ヶ月で${x}円を超えます。`;
 };
 // テスト実行
-calculateSavings(20000,2000);
+let x = Number(prompt("目標貯金額（円）を入力してください:"));
+let y = Number(prompt("毎月の貯金額（円）を入力してください:"));
+console.log(calculateSavings(x,y));
 
 // 確認問題（基礎文法）の問9で解いたコードをアロー関数式を使って関数化しましょう。
 
@@ -640,11 +684,11 @@ calculateSavings(20000,2000);
 //}
 
 // 上記内容をアロー関数式を使って関数化した内容を解答してください。
-const showPrimes = (x) => {
-  if (x >= 2) {
-    console.log(`1から${x}までの素数:`);
+const showPrimes = (primeX) => {
+  if (primeX >= 2) {
+    let result = `1から${primeX}までの素数:\n`;
 
-    for (let num = 2; num <= x; num++) {
+    for (let num = 2; num <= primeX; num++) {
         let isPrime = true;
 
         // 2 から num の平方根までの整数で割れるかチェック
@@ -659,11 +703,16 @@ const showPrimes = (x) => {
             continue; // 素数でないならスキップ
         }
 
-        console.log(num); // 素数なら表示
+        result += num + "\n"; // 素数なら表示
     }
+    return result;
   } else {
     alert("2以上の正しい数値を入力してください。");
   }
 };
 // テスト実行
-showPrimes(15);
+let primeX = Number(prompt("Xまでの素数を表示します。Xの値を入力してください:"));
+console.log(showPrimes(primeX));
+console.log(showPrimes(15));
+console.log(showPrimes(20));
+console.log(showPrimes(1));
