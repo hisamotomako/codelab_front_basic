@@ -72,8 +72,8 @@ function showTrip(destination,travelDays){
 // テスト実行
 let destination = prompt('旅行先を入力してください（大阪、京都など）:');
 let travelDays = Number(prompt('旅行日数を入力してください:'));
-console.log(showTrip(destination,travelDays));
-console.log(showTrip("北海道",7));
+showTrip(destination,travelDays);
+showTrip("北海道",7);
 
 // 確認問題（基礎文法）の問5で解いたコードを関数にしましょう。
 // 例題. ユーザーに テストの点数 を入力してもらい、以下の成績を判定してください。
@@ -707,12 +707,10 @@ const showPrimes = (primeX) => {
     }
     return result;
   } else {
-    alert("2以上の正しい数値を入力してください。");
+    return "2以上の正しい数値を入力してください。";
   }
 };
 // テスト実行
-let primeX = Number(prompt("Xまでの素数を表示します。Xの値を入力してください:"));
-console.log(showPrimes(primeX));
 console.log(showPrimes(15));
 console.log(showPrimes(20));
 console.log(showPrimes(1));
