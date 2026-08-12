@@ -76,7 +76,7 @@ const taxPricesWithYen = costs.map((price) => {
   return Math.round(price * 1.1).toLocaleString() + "円";
 });
 
-console.log(taxPrices);
+console.log(taxPricesWithYen);
 
 // Q4.5: costsの配列から2000より大きい価格だけを取り出して新しい配列にして出力ください。
 // 解答:
@@ -89,10 +89,10 @@ console.log(filteredList);
 // Q4.6: 次の配列から、偶数だけを取り出して新しい配列にして出力してください。
 // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // 解答:
-const numbers = [1,,2,3,4,5,6,7,8,9,10];
+const numbers = [1,2,3,4,5,6,7,8,9,10];
 
 const even = numbers.filter((number)=> {
-  return number % 2 ===0;
+  return number % 2 === 0;
 });
 
 console.log(even);
@@ -100,9 +100,9 @@ console.log(even);
 // Q4.7: 次の配列の数値を、2桁(1桁の場合はゼロ埋め）にし、新しい配列にして出力してください。
 // [3, 12, 5, 7, 23]
 // 解答:
-const nunmbers = [3, 12, 5, 7, 23];
+const numbers2 = [3, 12, 5, 7, 23];
 
-const result = numbers.map(num => String(num).padStart(2,"0"));
+const result = numbers2.map(num => String(num).padStart(2,"0"));
 
 console.log(result);
 // Q4.8: 次の配列の中の「-」をすべて「/」に置換して、新しい配列にして出力してください。
@@ -150,15 +150,15 @@ console.log(userScores);
 
 // Q5.4: Object.entries を使ってキーと値を1行ずつ出力してください。
 // 解答:
-Object.entries(userScores).forEach(([KeyboardEvent, value]) =>{
-  console.log(KeyboardEvent, value);
+Object.entries(userScores).forEach(([Key, value]) => {
+  console.log(Key, value);
 });
 
 // Q5.5: 合計値と平均値を出力してください。
 // 解答:
 const scores = Object.values(userScores);
 
-const total = scores.reduce((sum,score) => sum + scores, 0);
+const total = scores.reduce((sum, score) => sum + score, 0);
 
 const scoreAverage = total / scores.length;
 
@@ -222,11 +222,11 @@ console.log(languages4);
 
 // Q6.5: JavaScriptをTypeScriptに置換して、配列を出力してください。
 //解答
-const languages5 = ["HTML","CSS","JavaScript","PHP"];
+const languages5 = ["HTML", "CSS", "JavaScript", "PHP"];
 
-const q65Index = languages5.indexOf("javascript");
+const q65Index = languages5.indexOf("JavaScript");
 
-languages5[q65Index] = "TypeScript";
+languages5.splice(q65Index, 1, "TypeScript");
 
 console.log(languages5);
 
@@ -290,7 +290,7 @@ const userName = {
   pref: "東京都"
 };
 
-const query = `?last_name=${userName.last_name}&first_name=${userName.first_name}&pref=${userName.pref}`;
+const query = `?last_name='${userName.last_name}'&first_name='${userName.first_name}'&pref='${userName.pref}';`;
 
 console.log(query);
 
@@ -354,12 +354,12 @@ console.log(`${months[Number(month3)]} ${Number(day3)}, ${year3}`);
 //解答
 const brothers = ["太郎", "二郎", "三郎", "四郎"];
 
-const [first, second, third, fourth] = brothers;
+const [first, ...rest] = brothers;
 
 console.log(`長男：${first}`);
-console.log(`次男：${second}`);
-console.log(`三男：${third}`);
-console.log(`四男：${fourth}`);
+console.log(`2男：${rest[0]}`);
+console.log(`3男：${rest[1]}`);
+console.log(`4男：${rest[2]}`);
 
 // Q7.4: レスト構文を使って「example.com/taro/15/Tokyo」のアドレスから、ドメイン部分とパラメータ部分を分けて、以下のように出力してください。※パラメータ部分はオブジェクトにすること
 // ドメイン:example.com
@@ -367,9 +367,11 @@ console.log(`四男：${fourth}`);
 //解答
 const url = "example.com/taro/15/Tokyo";
 
-const [domain, name, age, pref] = url.split("/");
+const [domain, ...parameters] = url.split("/");
 
-console.log(domain);
+console.log(`ドメイン:${domain}`);
+
+const [name, age, pref] = parameters;
 
 const profile = {
   name,
