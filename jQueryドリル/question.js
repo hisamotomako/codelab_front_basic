@@ -52,7 +52,7 @@ $(function() {
 
   // 問題13:疑似クラス last-child
   // 疑似クラスlast-childを使い、li要素の最後のみ、リストの文字の色を赤色に変えてください。
-  $(".q13 li:last-child").css("color", "red")
+  $(".q13 li:last-child").css("color", "red");
 
   // 問題14:疑似クラス only-child
   // 疑似クラスonly-childを使い、span要素のみ、リストの文字の色を赤色に変えてください。
@@ -228,6 +228,6 @@ $(function() {
   // onメソッドについては以下を参照
   // https://qiita.com/shizuma/items/d561f37f864c3ebb5096
   $(".q54 button").on("click", function() {
-  $(".q54").append("<p>追加テキストテキスト</p>");
+    $(".q54").append("<p>追加テキストテキスト</p>");
   });
 });
